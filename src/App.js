@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Main from "./pages/Main";
+import './css/App.css'
+import { BrowserRouter } from "react-router-dom";
+import LinkGraph from "./components/linkGraph";
+import AppRouter from "./router";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [shows, setShows] = useState(false)
+    const [theme, setTheme] = useState(null)
+    const [icon, setIcon] = useState(null)
+    const [postData, setPostData] = useState({username: '', reposName: ''});
+
+    const getClassTheme = (e) => {
+        e.preventDefault()
+        setTheme(e.target.value)
+    }
+    const getIcon = (e) => {
+        e.preventDefault()
+        setIcon(e.target.label)
+
+    }
+    return (
+        <BrowserRouter>
+            {shows
+                ?
+                <
+                    LinkGraph
+                    icon={icon}
+                    postData={postData}
+                    setShows={setShows}
+                    theme={theme}
+                />
+                :
+                <
+                    Main setShows={setShows}
+                         postData={postData}
+                         setPostData={setPostData}
+                         getIcon={getIcon}
+                         getClassTheme={getClassTheme}
+                />
+            }
+
+
+        </BrowserRouter>
+    )
+
+};
 
 export default App;
