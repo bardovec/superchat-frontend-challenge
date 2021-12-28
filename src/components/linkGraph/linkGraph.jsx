@@ -13,7 +13,7 @@ const LinkGraph = ({theme, icon, postData}) => {
   const classes = useStyles();
   const [isShowing, setIsShowing] = useState(false)
   const location = useLocation()
-  const shareUrl = `https://api.github.com/repos${location.pathname}`
+  const shareUrl = `https://super-url.netlify.app${location.pathname}`
 
   return (
     <>
