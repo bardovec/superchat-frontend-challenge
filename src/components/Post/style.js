@@ -4,12 +4,13 @@ export default makeStyles({
     card: {
         display: 'flex',
         flexDirection: 'column',
-        borderRadius: '20px'
+        borderRadius: '40px',
     },
     author: {
-        color: 'white',
         textTransform: 'uppercase',
-        padding: '10px 10px',
+        color: "white",
+        borderRadius: '10px',
+        padding: '10px'
 
 
     },

@@ -20,24 +20,4 @@ export const publicRoutes = [
     element: <Main />,
     exact: true,
   },
-  {
-    path: CONTACTS_ROUTE,
-    element: <Contacts />,
-    exact: true,
-  },
-  {
-    path: ABOUT_US_ROUTE,
-    element: <AboutUs />,
-    exact: true,
-  },
-  {
-    path: `${JOURNAL_DETAILS_ROUTE}/:id/*`,
-    element: <JournalDetails />,
-    exact: true,
-  },
-  {
-    path: `${JOURNAL_THEME_ROUTE}/:id/*`,
-    element: <Journaltheme />,
-    exact: true,
-  },
 ];
