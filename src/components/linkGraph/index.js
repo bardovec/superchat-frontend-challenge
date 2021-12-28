@@ -1,2 +1,3 @@
-import LinkGraph from './linkGraph'
-export default LinkGraph
+import LinkGraph from './linkGraph';
+
+export default LinkGraph;

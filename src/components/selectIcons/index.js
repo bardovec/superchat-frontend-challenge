@@ -1,3 +1,3 @@
-import SelectIcons from './selectIcons'
+import SelectIcons from './selectIcons';
 
-export default SelectIcons
+export default SelectIcons;
