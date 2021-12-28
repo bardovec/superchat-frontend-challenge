@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Box,
   Button,
   Container,
   Paper, TextField, Typography,
@@ -10,7 +11,7 @@ import SelectControl from "../../components/selectControl";
 import SelectIcons from "../../components/selectIcons";
 import useStyles from "./styles";
 import {fetchPosts} from "../../api";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Main = ({icon, theme, getClassTheme, getIcon, postData, setPostData}) => {
   const classes = useStyles();
@@ -37,12 +38,17 @@ const Main = ({icon, theme, getClassTheme, getIcon, postData, setPostData}) => {
       {
         showing
           ?
+
+            <Box style={{ display: 'flex', flexDirection: "column",  alignItems: 'center',margin: '20px'}}>
           <Typography
             variant={'h4'}
-            style={{color: 'red', display: 'flex', justifyContent: 'center',marginTop: '20px'}}
+            style={{color: 'red',marginBottom: '20px'}}
           >
             No repos found! Try Again
-          </Typography> :
+          </Typography>
+            <Button onClick={() =>setShowing(false)} variant='contained'  color='primary' >Go back</Button>
+            </Box>
+          :
           <Container maxWidth={"sm"} style={{marginTop: '5rem'}}>
             <Paper  className={classes.paper}>
               <form   autoComplete="on" onSubmit={handleSubmit}
